@@ -2,60 +2,62 @@
 <html lang="es">
 
 <head>
-   <meta charset="UTF-8"> 
+    <meta charset="utf-8">
    <title>Calculadora De Sueldo | MeatSpin360</title>
+   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <header>
+        
         <div>
             <h1>Calculadora De Sueldo</h1>
             <h2>A ver si nos estan pagando bien o no...</h2>
         </div>
         <div>
-            <img src="C:\Repos\Prueba\img\Pglogo.png" width="192" height="108">
+            <img src="C:\Repos\Prueba\img\Pglogo.png" width="192" height="108" alt="loguito">
         </div>
         <div>
-            <h3>Ingresa tu nombre:</h3> 
+            <h3>Ingresa tu nombre:</h3><input id="NombreUsuario" type="text" placeholder="ej. Manolo"/>
         </div>
     </header>
 
-    <main>
-        <p> "aca va un texto"</p>
+    <main class="Calculadora">
+        <p class="Subtitulo"> "aca va un texto"</p>
         <div>
             <form>
             <div>
-                <p>Sueldo Basico</p><input type="number" placeholder="ej. 250000.03"/>
-                <p>A cuenta futuros aumentos</p><input type="number" placeholder="ej. 250000.03"/>
+                <p>Sueldo Basico</p><input id="basico" type="number" placeholder="ej. 250000.03"/>
+                <p>A cuenta futuros aumentos</p><input id="acfa" type="number" placeholder="ej. 250000.03"/>
 
-                <P> Conformado</P><input type="number" placeholder="ej. 250000.03"/>
+                <P> Conformado</P><input id="conformado" type="number" placeholder="ej. 250000.03"/>
             </div>
             <div>
                 <p>Titulo</p>
-                <p>Antigüedad (cant. de años)</p><input type="number" placeholder="ej. 5"/>
+                <p>Antigüedad (cant. de años)</p><input id="antiguedad" type="number" placeholder="ej. 5"/>
             </div>
             <div>
-                <p>Feriado (cant. de hs)</p><input type="number" placeholder="ej. 10.5"/>
-                <p>Horas extras 50%</p><input type="number" placeholder="ej. 10"/>
-                <p>Horas extras 100%</p><input type="number" placeholder="ej. 10"/>
+                <p>Feriado (cant. de hs)</p><input id="feriado" type="number" placeholder="ej. 10.5"/>
+                <p>Horas extras 50%</p><input id="50%" type="number" placeholder="ej. 10"/>
+                <p>Horas extras 100%</p><input id="100%" type="number" placeholder="ej. 10"/>
             </div>
             <div>
                 <P>Aporte Jubilacion</P>
             </div>
-            </form>            
-        </div>
+            </form>    
+            <button id="calcular">Calcular Sueldo</button>
+            <div id="random"></div>
 
-        <div>
-            <a href="http://www.google.com.ar/">Link a la sabiduria</a>
         </div>
-        <img src="img/primera.png" width="264" height="195" alt="La primeraaaah...">
     </main>
     <script src="scripts/Formulas.js"></script>
 </body>
 
 <footer>
-
-
+    <div>
+        <a href="http://www.google.com.ar/">Link a la sabiduria</a>
+    </div>
+    <img src="img/primera.png" width="264" height="195" alt="La primeraaaah...">
 </footer>
 
 </html>
