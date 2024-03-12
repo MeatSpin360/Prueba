@@ -2,33 +2,59 @@
 <html lang="es">
 
 <head>
-   <meta charset="UTF-8"> 
+    <meta charset="utf-8">
    <title>Calculadora De Sueldo | MeatSpin360</title>
+   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <header>
+        
         <div>
             <h1>Calculadora De Sueldo</h1>
             <h2>A ver si nos estan pagando bien o no...</h2>
         </div>
         <div>
-            <img src="C:\Repos\Prueba\img\pglogo.png" width="480" height="240">
+            <img src="C:\Repos\Prueba\img\Pglogo.png" width="192" height="108" alt="loguito">
         </div>
         <div>
-            <h3>Ingresa tu nombre:</h3> 
+            <h3>Ingresa tu nombre:</h3><input id="NombreUsuario" type="text" placeholder="ej. Manolo"/>
         </div>
     </header>
 
-    <main>
-        <p> "aca va un texto"</p>
+    <main class="Calculadora">
+        <p class="Subtitulo"> "aca va un texto"</p>
         <div>
-            <a href="http://www.google.com.ar/">Link a la sabiduria</a>
+            <form>
+            <div>
+                <p>Sueldo Basico</p><input class="variable" id="basico" type="number" placeholder="ej. 250000.03" required/>
+                <p>A cuenta futuros aumentos</p><input class="variable" id="acfa" type="number" placeholder="ej. 250000.03" required/>
+
+                <P> Conformado</P><input class="variable" id="conformado" type="number" placeholder="ej. 250000.03" required/>
+            </div>
+            <div>
+                <p>Titulo</p>
+                <p>Antigüedad (cant. de años)</p><input class="variable" id="antiguedad" type="number" placeholder="ej. 5" required/>
+            </div>
+            <div>
+                <p>Feriado (cant. de hs)</p><input class="variable" id="feriado" type="number" placeholder="ej. 10.5" required/>
+                <p>Horas extras 50%</p><input class="variable" id="horas50" type="number" placeholder="ej. 10" required/>
+                <p>Horas extras 100%</p><input class="variable" id="horas100" type="number" placeholder="ej. 10" required/>
+            </div>
+            </form>
+            <button id="calcular">Calcular Sueldo</button>
+            <div id="respuestadeerror"></div>
+
         </div>
-        <img src="img/primera.png" width="264" height="195" alt="La primeraaaah...">
     </main>
+    <script src="scripts/Formulas.js"></script>
 </body>
 
-<script src="C:\Repos\Prueba\scripts\Formulas.js"></script>
+<footer>
+    <div>
+        <a href="http://www.google.com.ar/">Solo es un link a google...</a>
+    </div>
+    <img src="img/primera.png" width="264" height="195" alt="La primeraaaah...">
+</footer>
 
 </html>
