@@ -27,9 +27,9 @@
         <div>
             <form>
             <div>
-                <p>Sueldo Basico</p><input class="variable" id="basico" type="number" placeholder="ej. 250000.03" required/>
-                <p>A cuenta futuros aumentos</p><input class="variable" id="acfa" type="number" placeholder="ej. 250000.03" required/>
-
+                <p>Sueldo Basico</p><input class="variable" id="basico" type="number" placeholder="ej. 250000.03" required disabled/>
+                <p>A cuenta futuros aumentos</p><input class="variable" id="acfa" type="number" placeholder="ej. 250000.03" required disabled/>
+                <p>Tengo el valor conformado tradicional.</p><input type="checkbox" id="sinacfa" checked="checked"/>
                 <P> Conformado</P><input class="variable" id="conformado" type="number" placeholder="ej. 250000.03" required/>
             </div>
             <div>
@@ -44,6 +44,7 @@
             </form>
             <button id="calcular">Calcular Sueldo</button>
             <div id="respuestadeerror"></div>
+            <div id="respuestasiok"></div>
 
         </div>
     </main>

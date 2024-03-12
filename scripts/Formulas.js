@@ -18,22 +18,39 @@ function restar(argu1, argu2) {
 
 // Aca arranca la funcion principal
 
-const $botoncalcular = document.querySelector('#calcular')
+let NombreUsuario = document.querySelector('#NombreUsuario').value;
+let datos = document.querySelectorAll('.variable');
+let respuestadeerror = `falta completar uno o mas campos, ${NombreUsuario}`;
+let respuestasiok = `Calculando tu sueldo, ${NombreUsuario}...`;
 
-$botoncalcular.onclick = function(){
+let $sinacfa = document.querySelector('#sinacfa');
 
-    let NombreUsuario = document.querySelector('#NombreUsuario').value;
+const $botoncalcular = document.querySelector('#calcular');
 
-    let datos = document.querySelectorAll('.variable');
+$sinacfa.onclick = function(){
+    if ((document.querySelector('#sinacfa').hasAttribute(chequed=false))){
 
-  console.log(typeof datos[3].value);
+        document.querySelector('#basico').setAttribute(disabled = false);
+    };
 
 };
 
-/*
-    let respuestadeerror;
 
 
-    document.querySelector('#respuestadeerror').innerText = respuestadeerror
-*/
+$botoncalcular.onclick = function(){
+
+
+    console.log(datos[2].value);
+
+    for (i=0; i<=datos.length-1; i++){
+        if (datos[i].value === ''){
+            document.querySelector('#respuestadeerror').innerText = respuestadeerror;
+        } else {
+            document.querySelector('#respuestasiok').innerText = respuestasiok;
+
+
+        };
+    };
+
+};
 
