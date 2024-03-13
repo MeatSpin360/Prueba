@@ -16,25 +16,30 @@ function restar(argu1, argu2) {
     return(argu1 - argu2)
 };
 
-// Aca arranca la funcion principal
-
 let NombreUsuario = document.querySelector('#NombreUsuario').value;
-let datos = document.querySelectorAll('.variable');
+let datos;
 let respuestadeerror = `falta completar uno o mas campos, ${NombreUsuario}`;
 let respuestasiok = `Calculando tu sueldo, ${NombreUsuario}...`;
-
 let $sinacfa = document.querySelector('#sinacfa');
-
 const $botoncalcular = document.querySelector('#calcular');
 
+
+//Funcion del checkbox de tipo de salario basico
+
+
+
 $sinacfa.onclick = function(){
-    if ((document.querySelector('#sinacfa').hasAttribute(chequed=false))){
+    if ((document.querySelector('#sinacfa'))){
 
-        document.querySelector('#basico').setAttribute(disabled = false);
+        document.querySelector('#basico').Disabled;
+        document.querySelector('#acfa').Disabled;
+        datos = document.querySelectorAll('.clasico');
+    } else {
     };
-
 };
 
+
+// Aca arranca la funcion principal
 
 
 $botoncalcular.onclick = function(){
@@ -48,9 +53,7 @@ $botoncalcular.onclick = function(){
         } else {
             document.querySelector('#respuestasiok').innerText = respuestasiok;
 
-
         };
     };
-
 };
 

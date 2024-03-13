@@ -27,19 +27,19 @@
         <div>
             <form>
             <div>
-                <p>Sueldo Basico</p><input class="variable" id="basico" type="number" placeholder="ej. 250000.03" required disabled/>
-                <p>A cuenta futuros aumentos</p><input class="variable" id="acfa" type="number" placeholder="ej. 250000.03" required disabled/>
-                <p>Tengo el valor conformado tradicional.</p><input type="checkbox" id="sinacfa" checked="checked"/>
-                <P> Conformado</P><input class="variable" id="conformado" type="number" placeholder="ej. 250000.03" required/>
+                <p>Sueldo Basico</p><input class="variable" id="basico" type="number" placeholder="ej. 250000.03" required aria-disabled="false"/>
+                <p>A cuenta futuros aumentos</p><input class="variable" id="acfa" type="number" placeholder="ej. 250000.03" required aria-disabled="false"/>
+                <p>Tengo el valor conformado tradicional.</p><input type="checkbox" id="sinacfa" aria-checked="false"/>
+                <P> Conformado</P><input class="clasico" id="conformado" type="number" placeholder="ej. 250000.03" required aria-disabled="true"/>
             </div>
             <div>
                 <p>Titulo</p>
-                <p>Antigüedad (cant. de años)</p><input class="variable" id="antiguedad" type="number" placeholder="ej. 5" required/>
+                <p>Antigüedad (cant. de años)</p><input class="clasico" class="variable" id="antiguedad" type="number" placeholder="ej. 5" required/>
             </div>
             <div>
-                <p>Feriado (cant. de hs)</p><input class="variable" id="feriado" type="number" placeholder="ej. 10.5" required/>
-                <p>Horas extras 50%</p><input class="variable" id="horas50" type="number" placeholder="ej. 10" required/>
-                <p>Horas extras 100%</p><input class="variable" id="horas100" type="number" placeholder="ej. 10" required/>
+                <p>Feriado (cant. de hs)</p><input class="clasico" class="variable" id="feriado" type="number" placeholder="ej. 10.5" required/>
+                <p>Horas extras 50%</p><input class="clasico" class="variable" id="horas50" type="number" placeholder="ej. 10" required/>
+                <p>Horas extras 100%</p><input class="clasico" class="variable" id="horas100" type="number" placeholder="ej. 10" required/>
             </div>
             </form>
             <button id="calcular">Calcular Sueldo</button>
