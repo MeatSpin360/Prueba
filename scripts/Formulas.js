@@ -16,44 +16,45 @@ function restar(argu1, argu2) {
     return(argu1 - argu2)
 };
 
-let NombreUsuario = document.querySelector('#NombreUsuario').value;
-let datos;
-let respuestadeerror = `falta completar uno o mas campos, ${NombreUsuario}`;
-let respuestasiok = `Calculando tu sueldo, ${NombreUsuario}...`;
+let NombreUsuario = document.querySelector('#NombreUsuario');
+let respuestadeerror = `falta completar uno o mas campos, ${NombreUsuario.value}`;
+let respuestasiok = `Calculando tu sueldo, ${NombreUsuario.value}...`;
 let $sinacfa = document.querySelector('#sinacfa');
-const $botoncalcular = document.querySelector('#calcular');
+const $botoncalcular = (document.querySelector('#calcular'));
+
 
 
 //Funcion del checkbox de tipo de salario basico
 
-
-
-$sinacfa.onclick = function(){
-    if ((document.querySelector('#sinacfa'))){
-
-        document.querySelector('#basico').Disabled;
-        document.querySelector('#acfa').Disabled;
-        datos = document.querySelectorAll('.clasico');
+    if ($sinacfa.Checked = true){
+        datosA = document.querySelectorAll('.clasico');
+        document.querySelector('#basico').disabled;
+        document.querySelector('#acfa').disabled;
     } else {
+        datosB = document.querySelectorAll('variable');
+        document.querySelector('#conformado').disabled;
     };
-};
-
 
 // Aca arranca la funcion principal
 
 
 $botoncalcular.onclick = function(){
-
-
-    console.log(datos[2].value);
-
-    for (i=0; i<=datos.length-1; i++){
-        if (datos[i].value === ''){
-            document.querySelector('#respuestadeerror').innerText = respuestadeerror;
-        } else {
-            document.querySelector('#respuestasiok').innerText = respuestasiok;
-
+    if ($sinacfa.checked === true){
+        for (i=0; i <= datosA.length - 1; i++){
+            if (datosA[i].value == '' || datosA[i].value == null){
+                document.querySelector('#respuestadeerror').innerText = respuestadeerror;
+            } else {
+                document.querySelector('#respuestasiok').innerText = respuestasiok;
+            };
         };
-    };
+    } else {
+        for (i=0; i <= datosB.length - 1; i++){
+            if (datosB[i].value == '' || datosA[i].value == null){
+                document.querySelector('#respuestadeerror').innerText = respuestadeerror;
+            } else {
+                document.querySelector('#respuestasiok').innerText = respuestasiok;
+            };
+        };
+    }
 };
 

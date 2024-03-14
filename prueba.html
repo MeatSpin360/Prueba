@@ -2,23 +2,21 @@
 <html lang="es">
 
 <head>
-    <meta charset="utf-8">
-   <title>Calculadora De Sueldo | MeatSpin360</title>
-   <link rel="stylesheet" href="css/main.css">
+    <meta charset="utf-8"/>
+    <title>Calculadora De Sueldo | MeatSpin360</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <header>
-        
         <div>
             <h1>Calculadora De Sueldo</h1>
             <h2>A ver si nos estan pagando bien o no...</h2>
-        </div>
-        <div>
             <img src="C:\Repos\Prueba\img\Pglogo.png" width="192" height="108" alt="loguito">
         </div>
         <div>
-            <h3>Ingresa tu nombre:</h3><input id="NombreUsuario" type="text" placeholder="ej. Manolo"/>
+            <label for="NombreUsuario">Ingresa tu nombre:</label>
+            <input id="NombreUsuario" type="text" placeholder="ej. Manolo"/>
         </div>
     </header>
 
@@ -27,19 +25,42 @@
         <div>
             <form>
             <div>
-                <p>Sueldo Basico</p><input class="variable" id="basico" type="number" placeholder="ej. 250000.03" required aria-disabled="false"/>
-                <p>A cuenta futuros aumentos</p><input class="variable" id="acfa" type="number" placeholder="ej. 250000.03" required aria-disabled="false"/>
-                <p>Tengo el valor conformado tradicional.</p><input type="checkbox" id="sinacfa" aria-checked="false"/>
-                <P> Conformado</P><input class="clasico" id="conformado" type="number" placeholder="ej. 250000.03" required aria-disabled="true"/>
+                <label for="basico">Sueldo Basico ...................</label>
+                <input class="variable" id="basico" type="number" placeholder="ej. 250000.03" required value=""/>
+            </div>    
+            <div>
+                <label for="acfa">A cuenta futuros aumentos</label>
+                <input class="variable" id="acfa" type="number" placeholder="ej. 250000.03" required value=""/>
             </div>
             <div>
-                <p>Titulo</p>
-                <p>Antigüedad (cant. de años)</p><input class="clasico" class="variable" id="antiguedad" type="number" placeholder="ej. 5" required/>
+                <input type="checkbox" id="sinacfa" title="Habilitar conformado" placeholder="Habilitar conformado" />
+                <label for="sinacfa">Tengo el valor conformado tradicional.</label>
             </div>
             <div>
-                <p>Feriado (cant. de hs)</p><input class="clasico" class="variable" id="feriado" type="number" placeholder="ej. 10.5" required/>
-                <p>Horas extras 50%</p><input class="clasico" class="variable" id="horas50" type="number" placeholder="ej. 10" required/>
-                <p>Horas extras 100%</p><input class="clasico" class="variable" id="horas100" type="number" placeholder="ej. 10" required/>
+                <label for="conformado"> Conformado......................</label>
+                <input class="clasico" id="conformado" type="number" placeholder="ej. 250000.03" required value=""/>
+            </div>
+            <div>
+                <input type="checkbox" id="titulo" title="titulo" placeholder="si/no"/>
+                <label for="titulo">Titulo (20%)</label>
+            </div>
+            <div>
+                <label for="antiguedad">Antigüedad (cant. de años)</label>
+                <input class="clasico" class="variable" id="antiguedad" type="number" placeholder="ej. 5" required/>
+            </div>
+            <div>
+                <label for="feriado">Feriado (cant. de hs)..........</label>
+                <input class="clasico" class="variable" id="feriado" type="number" placeholder="ej. 10.5" required/>
+            </div>
+            <div>
+                <label for="horas50">Horas extras 50%...............</label>
+                <input class="clasico" class="variable" id="horas50" type="number" placeholder="ej. 10" required/>
+            </div>
+            <div>
+                <label for="horas100">Horas extras 100%..............</label>
+                <input class="clasico" class="variable" id="horas100" type="number" placeholder="ej. 10" required/>
+            </div>
+            <div>
             </div>
             </form>
             <button id="calcular">Calcular Sueldo</button>
