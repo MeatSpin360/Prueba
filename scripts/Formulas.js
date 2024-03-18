@@ -16,30 +16,17 @@ function restar(argu1, argu2) {
     return(argu1 - argu2)
 };
 
-// variables principales
 
 let NombreUsuario = document.querySelector('#NombreUsuario');
 
-let basico = document.querySelector('#basico');
-let acfa = document.querySelector('#acfa');
+
+// variable principal
+
 let conformado = document.querySelector('#conformado');
-
-// funcion de la checkbox de salario basico
-
-let CheckboxBasico = document.querySelector('#checkbasico');
-let ValorAlternado = function(e) {
-    basico.disabled = e.target.checked;
-    acfa.disabled = e.target.checked;
-    conformado.disabled = !e.target.checked;
-};
-
-ValorAlternado({target: CheckboxBasico});
-CheckboxBasico.addEventListener('change', ValorAlternado)
-
+let datos = document.querySelectorAll('.clasico');
 //variables secundarias
 
-let tituloA;
-let tituloB;
+let titulo;
 let antiguedad = document.querySelector('#antiguedad');
 let valorantiguedad;
 let hsferiado = document.querySelector('#feriado');
@@ -48,35 +35,48 @@ let canthoras50 = document.querySelector('#horas50');
 let valorhoras50;
 let canthoras100 = document.querySelector('#horas100');
 let valorhoras100;
-let remuA;
-let remuB;
+let remu;
 let noremunerativo;
-
+let bruto;
 
 // varaibles positivas que se calculan
 
-function FtituloA() {
-    return tituloA = Number(basico.value + acfa.value) * 0.20;
+function Fantiguedad() {
+    return valorantiguedad = Number((antiguedad.value/100)*conformado);
 };
 
-function FtituloB() {
-    return tituloB = Number(conformado.value * 0.20);
+function Ftitulo() {
+    return titulo = Number(conformado.value * 0.20);
 };
 
-function remunerativo() {
-    if (tituloA !== '') {
-        return remuA = (basico.value + acfa.value + tituloA + valorantiguedad + valorferiado + valorhoras50 + valorhoras100);
+function Fferiado() {
+    return valorferiado = Number(feriado.value*9*valorhoras100);
+};
+
+function Fhoras50() {
+    return valorhoras50 = Number(canthoras50.value*((conformado/200)*1.5));
+};
+
+function Fhoras100() {
+    return valorhoras100 = Number(canthoras100.value*((conformado/200)*2));
+};
+
+function Fremunerativo() {
+    if (titulo !== '') {
+        return remu = (conformado.value + titulo + valorantiguedad + valorferiado + valorhoras50 + valorhoras100);
     } else {
-        return remuB = (conformado.value + tituloB + valorantiguedad + valorferiado + valorhoras50 + valorhoras100);
+        return remu = (conformado.value + valorantiguedad + valorferiado + valorhoras50 + valorhoras100);
     };
 };
 
-function Fbruto() {
-    if ()
-
+function Fnoremunerativo(){
+    return noremunerativo = Number(document.querySelector('#noremunerativo').value);
 };
-let brutoA = remuA + noremunerativo;
-let brutoB = remuB + noremunerativo;
+
+function Fbruto() {
+    return bruto = remu + noremunerativo;
+};
+
 
 // ahora variables de descuento
 
@@ -87,82 +87,77 @@ let sindicato;
 let ganancias;
 
 function Fjubilacion() {
-    if (remuA !== '') {
-        return jubilacion = Number(remuA * 0.11);
+        return jubilacion = Number(remu * 0.11);
+
+};
+
+function Fobrasocial1() {
+        return obrasocial1 = Number(remu * 0.03);
+};
+
+function Fobrasocial2() {
+        return obrasocial2 = Number(remu * 0.03);
+   
+};
+
+function Fsindicato() {
+        return sindicato = Number(remu * 0.03);
+    
+};
+
+function Fganancias() {
+    if (Number(bruto) >= 2340000) {
+        return ganancias = (bruto * 0.35);
     } else {
-        return jubilacion = Number(remuB * 0.11);
+        return ganancias = 0;
     };
 };
 
 
-function Fobrasocial1() {
-    if (remuA !== '') {
-        return obrasocial1 = Number(remuA * 0.03);
-    } else {
-        return jobrasocial1 = Number(remuB * 0.03);
-    };   
-}
+function CalculoFinal() {
 
-function Fobrasocial2() {
-    if (remuA !== '') {
-        return obrasocial2 = Number(remuA * 0.03);
-    } else {
-        return obrasocial2 = Number(remuB * 0.03);
-    };    
-};
 
-function Fsindicato() {
-    if (remuA !== '') {
-        return sindicato = Number(remuA * 0.03);
-    } else {
-        return sindicato = Number(remuB * 0.03);
-    };    
-};
-
-function Fganancias() {
-    if ()
 };
 
 // botones y checkbox
 
 let respuestadeerror = `falta completar uno o mas campos, ${NombreUsuario.value}`;
 let respuestasiok = `Calculando tu sueldo, ${NombreUsuario.value}...`;
-let $sinacfa = document.querySelector('#sinacfa');
 const $botoncalcular = (document.querySelector('#calcular'));
 
-
-
-//Funcion del checkbox de tipo de salario basico
-
-    if ($sinacfa.Checked = true){
-        datosA = document.querySelectorAll('.clasico');
-        document.querySelector('#basico').disabled;
-        document.querySelector('#acfa').disabled;
-    } else {
-        datosB = document.querySelectorAll('variable');
-        document.querySelector('#conformado').disabled;
-    };
 
 // Aca arranca la funcion principal
 
 
 $botoncalcular.onclick = function(){
-    if ($sinacfa.checked === true){
-        for (i=0; i <= datosA.length - 1; i++){
-            if (datosA[i].value == '' || datosA[i].value == null){
-                document.querySelector('#respuestadeerror').innerText = respuestadeerror;
-            } else {
-                document.querySelector('#respuestasiok').innerText = respuestasiok;
-            };
-        };
-    } else {
-        for (i=0; i <= datosB.length - 1; i++){
-            if (datosB[i].value == '' || datosA[i].value == null){
-                document.querySelector('#respuestadeerror').innerText = respuestadeerror;
-            } else {
-                document.querySelector('#respuestasiok').innerText = respuestasiok;
-            };
-        };
-    }
-};
+    for(i=0; i <= datos.length-1; i++){
+        if(datos[i].value == ''){
+            respuestadeerror = `falta completar uno o mas campos, ${NombreUsuario.value}`;
+        } else {
+            Fantiguedad;
+            Ftitulo;
+            Fferiado;
+            Fhoras50;
+            Fhoras100;
+            Fremunerativo;
+            Fnoremunerativo;
+            Fjubilacion;
+            Fganancias;
+            Fobrasocial1;
+            Fobrasocial2;
+            Fsindicato;
 
+
+
+
+
+
+
+
+        }
+    };
+
+
+
+
+};

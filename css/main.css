@@ -10,11 +10,6 @@ p{
     font-size: 20px;
 };
 
-.Subtitulo{
-    font-style: oblique;
-    font-weight: bold;
-};
-
 .Calculadora{
     background: darkgoldenrod;
 };
@@ -26,3 +21,4 @@ p{
 #respuestasiok{
     color: forestgreen
 };
+

@@ -21,24 +21,11 @@
     </header>
 
     <main class="Calculadora">
-        <p class="Subtitulo"> "aca va un texto"</p>
         <div>
             <form>
             <div>
-                <label for="basico">Sueldo Basico ...................</label>
-                <input class="variable" id="basico" type="number" placeholder="ej. 250000.03" required value=""/>
-            </div>    
-            <div>
-                <label for="acfa">A cuenta futuros aumentos</label>
-                <input class="variable" id="acfa" type="number" placeholder="ej. 250000.03" required value=""/>
-            </div>
-            <div>
-                <input type="checkbox" id="sinacfa" title="Habilitar conformado" placeholder="Habilitar conformado" />
-                <label for="sinacfa">Tengo el valor conformado tradicional.</label>
-            </div>
-            <div>
                 <label for="conformado"> Conformado......................</label>
-                <input class="clasico" id="conformado" type="number" placeholder="ej. 250000.03" required value=""/>
+                <input class="clasico" id="conformado" type="number" placeholder="ej. 250000.03" required/>
             </div>
             <div>
                 <input type="checkbox" id="titulo" title="titulo" placeholder="si/no"/>
@@ -46,21 +33,23 @@
             </div>
             <div>
                 <label for="antiguedad">Antigüedad (cant. de años)</label>
-                <input class="clasico" class="variable" id="antiguedad" type="number" placeholder="ej. 5" required/>
+                <input class="clasico" id="antiguedad" type="number" placeholder="ej. 5" required/>
             </div>
             <div>
                 <label for="feriado">Feriado (cant. de hs)..........</label>
-                <input class="clasico" class="variable" id="feriado" type="number" placeholder="ej. 10.5" required/>
+                <input class="clasico" id="feriado" type="number" placeholder="ej. 10.5" required/>
             </div>
             <div>
                 <label for="horas50">Horas extras 50%...............</label>
-                <input class="clasico" class="variable" id="horas50" type="number" placeholder="ej. 10" required/>
+                <input class="clasico" id="horas50" type="number" placeholder="ej. 10" required/>
             </div>
             <div>
                 <label for="horas100">Horas extras 100%..............</label>
-                <input class="clasico" class="variable" id="horas100" type="number" placeholder="ej. 10" required/>
+                <input class="clasico"  id="horas100" type="number" placeholder="ej. 10" required/>
             </div>
             <div>
+                <label for="noremunerativo">no remunerativo</label>
+                <input type="text" placeholder="ej.  bono anual"/> <input id="noremunerativo" type="number" value="0" placeholder=" ej. 250000.03"/>
             </div>
             </form>
             <button id="calcular">Calcular Sueldo</button>
