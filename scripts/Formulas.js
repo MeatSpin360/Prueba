@@ -20,7 +20,7 @@ let SalarioNeto;
 // Funciones de todas las variables positivas
 
 function Fnombreusuario() {
-    return NombreUsuario = document.querySelector('#NombreUsuario');
+    NombreUsuario = document.querySelector('#NombreUsuario');
 };
 
 function Fconformado() {
@@ -28,7 +28,7 @@ function Fconformado() {
 };
 
 function Fdatos() {
-    return datos = document.querySelectorAll('.clasico');
+    return datos = document.querySelectorAll('.clasico').values;
 };
 
 function Fantiguedad() {
@@ -54,6 +54,15 @@ function Fhoras100() {
     canthoras100 = document.querySelector('#horas100');
     return valorhoras100 = Number(canthoras100.value*((conformado/200)*2));
 };
+
+//PROBLEMA 0 .... NO SE COMO CARAJO HACER PARA QUE SE ME PONGA:
+// Checkbox checked  =  input "titulo" habilitado para escribir un valor
+// checkbox unchecked = input "titulo" disabled ( que se vea gris en la pagina)
+// ESTO TIENE QUE VARIAR EN TIEMPO REAL, CADA VEZ QUE TILDE O DESTILDE EL CHECKBOX TIENE QUE HABILITAR Y DESABILITAR EL INPUT...
+
+//PROBLEMA 0.5 ... El mismo check, pero para incluir o no incluir el valor del input "titulo".. en la funcion de aca abajo
+// Checkbox checked  =  remu incluye el valor del titulo
+// checkbox unchecked = remu no incluye el valor del titulo
 
 function Fremunerativo() {
     if (document.querySelector('#titulo').ariaChecked = checked) {
@@ -119,38 +128,34 @@ const $botoncalcular = (document.querySelector('#calcular'));
 
 $botoncalcular.onclick = function(){
 
+    Fantiguedad;
+    Ftitulo;
+    Fferiado;
+    Fhoras50;
+    Fhoras100;
+    Fremunerativo;
+    Fnoremunerativo;
+    Fjubilacion;
+    Fganancias;
+    Fobrasocial1;
+    Fobrasocial2;
+    Fsindicato;
+    Neto;
+    // si o si van todas las funciones primero para armar el array con los valores puestos. ==> 
+    // JAVI, ACA ESTA EL PROBLEMA 1 .... las funciones no me aplican los valores a las variables
+    // cuando llega a la funcion de abajo, todas las variables de arriba siguen undefined... eso me lleva al problema 2...
     Fdatos;
 
-    for(i=0; i <= datos.length -1; i++){
+    for(i=0; i <= datos.length -1; i++){ // problema 2,... el length no lo cuenta porque me dice que datos es undefined.... creo que si se soluciona el problema 1, esto se arregla
         if(datos[i].value == ''){
            let respuestadeerror = `falta completar uno o mas campos, ${NombreUsuario.value}`;
-           return document.querySelector('#respuestadeerror').textContent = respuestadeerror
+           return document.querySelector('#respuestadeerror').textContent = respuestadeerror;
         } else {
-            Fantiguedad;
-            Ftitulo;
-            Fferiado;
-            Fhoras50;
-            Fhoras100;
-            Fremunerativo;
-            Fnoremunerativo;
-            Fjubilacion;
-            Fganancias;
-            Fobrasocial1;
-            Fobrasocial2;
-            Fsindicato;
-            Neto;
 
-            return document.querySelector('#neto').textContent = (`tu salario neto es $${SalarioNeto}`)
-
-
-
-
-
-
-        }
+            document.querySelector('#neto').innerText = (`tu salario neto es $${SalarioNeto}`)
+        };
     };
 
-
-
-
+return false;
 };
+
