@@ -1,47 +1,38 @@
-// funciones varias
+// todas las variables positivas
 
-function multiplicar(argu1, argu2) {
-    return (argu1 * argu2)
-};
-
-function dividir(argu1, argu2) {
-    return (argu1 / argu2)
-};
-
-function sumar(argu1, argu2) {
-    return (argu1 + argu2)
-};
-
-function restar(argu1, argu2) {
-    return(argu1 - argu2)
-};
-
-
-let NombreUsuario = document.querySelector('#NombreUsuario');
-
-
-// variable principal
-
-let conformado = document.querySelector('#conformado');
-let datos = document.querySelectorAll('.clasico');
-//variables secundarias
-
+let NombreUsuario;
+let conformado;
+let datos;
 let titulo;
-let antiguedad = document.querySelector('#antiguedad');
+let antiguedad;
 let valorantiguedad;
-let hsferiado = document.querySelector('#feriado');
+let hsferiado;
 let valorferiado;
-let canthoras50 = document.querySelector('#horas50');
+let canthoras50;
 let valorhoras50;
-let canthoras100 = document.querySelector('#horas100');
+let canthoras100;
 let valorhoras100;
 let remu;
 let noremunerativo;
 let bruto;
+let SalarioNeto;
 
-// varaibles positivas que se calculan
+// Funciones de todas las variables positivas
+
+function Fnombreusuario() {
+    return NombreUsuario = document.querySelector('#NombreUsuario');
+};
+
+function Fconformado() {
+    return conformado = document.querySelector('#conformado');
+};
+
+function Fdatos() {
+    return datos = document.querySelectorAll('.clasico');
+};
 
 function Fantiguedad() {
+    antiguedad = document.querySelector('#antiguedad');
     return valorantiguedad = Number((antiguedad.value/100)*conformado);
 };
 
@@ -50,19 +41,22 @@ function Ftitulo() {
 };
 
 function Fferiado() {
+    hsferiado = document.querySelector('#feriado');
     return valorferiado = Number(feriado.value*9*valorhoras100);
 };
 
 function Fhoras50() {
+    canthoras50 = document.querySelector('#horas50');
     return valorhoras50 = Number(canthoras50.value*((conformado/200)*1.5));
 };
 
 function Fhoras100() {
+    canthoras100 = document.querySelector('#horas100');
     return valorhoras100 = Number(canthoras100.value*((conformado/200)*2));
 };
 
 function Fremunerativo() {
-    if (titulo !== '') {
+    if (document.querySelector('#titulo').ariaChecked = checked) {
         return remu = (conformado.value + titulo + valorantiguedad + valorferiado + valorhoras50 + valorhoras100);
     } else {
         return remu = (conformado.value + valorantiguedad + valorferiado + valorhoras50 + valorhoras100);
@@ -88,7 +82,6 @@ let ganancias;
 
 function Fjubilacion() {
         return jubilacion = Number(remu * 0.11);
-
 };
 
 function Fobrasocial1() {
@@ -96,13 +89,11 @@ function Fobrasocial1() {
 };
 
 function Fobrasocial2() {
-        return obrasocial2 = Number(remu * 0.03);
-   
+        return obrasocial2 = Number(remu * 0.03);  
 };
 
 function Fsindicato() {
         return sindicato = Number(remu * 0.03);
-    
 };
 
 function Fganancias() {
@@ -114,15 +105,12 @@ function Fganancias() {
 };
 
 
-function CalculoFinal() {
-
-
+function Neto() {
+    return SalarioNeto = (bruto - jubilacion - obrasocial1 - obrasocial2 - sindicato - ganancias);
 };
 
-// botones y checkbox
+// boton
 
-let respuestadeerror = `falta completar uno o mas campos, ${NombreUsuario.value}`;
-let respuestasiok = `Calculando tu sueldo, ${NombreUsuario.value}...`;
 const $botoncalcular = (document.querySelector('#calcular'));
 
 
@@ -130,9 +118,13 @@ const $botoncalcular = (document.querySelector('#calcular'));
 
 
 $botoncalcular.onclick = function(){
-    for(i=0; i <= datos.length-1; i++){
+
+    Fdatos;
+
+    for(i=0; i <= datos.length -1; i++){
         if(datos[i].value == ''){
-            respuestadeerror = `falta completar uno o mas campos, ${NombreUsuario.value}`;
+           let respuestadeerror = `falta completar uno o mas campos, ${NombreUsuario.value}`;
+           return document.querySelector('#respuestadeerror').textContent = respuestadeerror
         } else {
             Fantiguedad;
             Ftitulo;
@@ -146,8 +138,9 @@ $botoncalcular.onclick = function(){
             Fobrasocial1;
             Fobrasocial2;
             Fsindicato;
+            Neto;
 
-
+            return document.querySelector('#neto').textContent = (`tu salario neto es $${SalarioNeto}`)
 
 
 
